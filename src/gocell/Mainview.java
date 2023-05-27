@@ -23,15 +23,63 @@ public class Mainview extends javax.swing.JFrame {
     String nominal;
     String total;
     String result;
-    private int variRandom;
+   // Random rand = new Random();
+                 
+
+   //saldoAwal = rand.nextInt(100000) + 500000;
+     int saldo = 0;
+     
+    
+    
+    
+   
     /**
      * Creates new form Mainview
      */
     public Mainview() {
+        
          
+        
         initComponents();
+         //Random rand = new Random();
+        // String str = String.valueOf(saldoAwal.getText());  
+                 
+
+        // int firstSaldo = Integer.parseInt(str);
+        // firstSaldo = rand.nextInt();
+        
+         
+        
+
+        
+        
+        
         
     }
+    public Mainview(String str) {
+        initComponents();
+      saldoAwal.setText("" + str);
+        
+       
+      }
+    public void mainSet(int saldo){
+        this.saldo = saldo;
+    }
+    public int getSaldo(){
+        
+        String saldoString = String.valueOf(saldoAwal.getText());
+        int saldoAkhir = Integer.parseInt(saldoString);
+        saldoAkhir = saldo;
+        return saldoAkhir;
+    }
+    
+//    public int getPrivateSaldo(){
+//        return hasilAngka;
+//    }
+//    public void setPrivateSaldo(int angka){
+//        this.hasilAngka = angka;
+//    }
+   
     
     
 
@@ -70,6 +118,7 @@ public class Mainview extends javax.swing.JFrame {
         variableRandom = new javax.swing.JLabel();
         variableSaldo = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        saldoAwal = new javax.swing.JLabel();
         menuPanel = new javax.swing.JPanel();
         menuPulsa = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -137,15 +186,15 @@ public class Mainview extends javax.swing.JFrame {
         xl = new javax.swing.JPanel();
         jLabel43 = new javax.swing.JLabel();
         jLabel44 = new javax.swing.JLabel();
-        pulsa5k = new javax.swing.JButton();
+        pulsa5kXL = new javax.swing.JButton();
         jLabel45 = new javax.swing.JLabel();
         jLabel46 = new javax.swing.JLabel();
         jLabel47 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
-        pulsa10k = new javax.swing.JButton();
-        pulsa20k = new javax.swing.JButton();
-        pulsa50k = new javax.swing.JButton();
-        pulsa100k = new javax.swing.JButton();
+        pulsa10kXL = new javax.swing.JButton();
+        pulsa20kXL = new javax.swing.JButton();
+        pulsa50kXL = new javax.swing.JButton();
+        pulsa100kXL = new javax.swing.JButton();
         jLabel50 = new javax.swing.JLabel();
         jLabel55 = new javax.swing.JLabel();
         jButton28 = new javax.swing.JButton();
@@ -439,38 +488,46 @@ public class Mainview extends javax.swing.JFrame {
             }
         });
 
+        saldoAwal.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
+        saldoAwal.setForeground(new java.awt.Color(204, 204, 204));
+        saldoAwal.setText("100000");
+
         javax.swing.GroupLayout panelmenuLayout = new javax.swing.GroupLayout(panelmenu);
         panelmenu.setLayout(panelmenuLayout);
         panelmenuLayout.setHorizontalGroup(
             panelmenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelmenuLayout.createSequentialGroup()
-                .addGroup(panelmenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelmenuLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnToken, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(panelmenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(panelmenuLayout.createSequentialGroup()
+                .addGroup(panelmenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelmenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelmenuLayout.createSequentialGroup()
                             .addContainerGap()
-                            .addGroup(panelmenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(btnPulsa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnPaket, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                        .addGroup(panelmenuLayout.createSequentialGroup()
-                            .addGap(80, 80, 80)
-                            .addComponent(jLabel2))
-                        .addGroup(panelmenuLayout.createSequentialGroup()
-                            .addGap(54, 54, 54)
-                            .addComponent(jLabel1))
-                        .addGroup(panelmenuLayout.createSequentialGroup()
-                            .addGap(22, 22, 22)
-                            .addComponent(jLabel56)
-                            .addGap(6, 6, 6)
-                            .addComponent(variablePulsa)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addGroup(panelmenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(variableRandom)
-                                .addComponent(variableSaldo)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(btnToken, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(panelmenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(panelmenuLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(panelmenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(btnPulsa, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(btnPaket, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(logout, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addGroup(panelmenuLayout.createSequentialGroup()
+                                .addGap(80, 80, 80)
+                                .addComponent(jLabel2))
+                            .addGroup(panelmenuLayout.createSequentialGroup()
+                                .addGap(54, 54, 54)
+                                .addComponent(jLabel1))
+                            .addGroup(panelmenuLayout.createSequentialGroup()
+                                .addGap(112, 112, 112)
+                                .addComponent(variablePulsa)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(panelmenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(variableRandom)
+                                    .addComponent(variableSaldo)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(panelmenuLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel56)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(saldoAwal)))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
         panelmenuLayout.setVerticalGroup(
@@ -486,14 +543,17 @@ public class Mainview extends javax.swing.JFrame {
                 .addComponent(btnPaket, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnToken, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 174, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(panelmenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel56)
                     .addComponent(variablePulsa)
                     .addComponent(variableRandom)
                     .addComponent(variableSaldo)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(panelmenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel56)
+                    .addComponent(saldoAwal))
+                .addGap(67, 67, 67)
                 .addComponent(logout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18))
         );
@@ -702,6 +762,11 @@ public class Mainview extends javax.swing.JFrame {
         indo20000.setBackground(new java.awt.Color(211, 84, 0));
         indo20000.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         indo20000.setText("Rp 21.000");
+        indo20000.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                indo20000ActionPerformed(evt);
+            }
+        });
 
         indo50000.setBackground(new java.awt.Color(211, 84, 0));
         indo50000.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -1102,17 +1167,17 @@ public class Mainview extends javax.swing.JFrame {
         jLabel44.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel44.setText("5.000");
 
-        pulsa5k.setBackground(new java.awt.Color(211, 84, 0));
-        pulsa5k.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        pulsa5k.setText("Rp 6.000");
-        pulsa5k.addMouseListener(new java.awt.event.MouseAdapter() {
+        pulsa5kXL.setBackground(new java.awt.Color(211, 84, 0));
+        pulsa5kXL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        pulsa5kXL.setText("Rp 6.000");
+        pulsa5kXL.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                pulsa5kMouseClicked(evt);
+                pulsa5kXLMouseClicked(evt);
             }
         });
-        pulsa5k.addActionListener(new java.awt.event.ActionListener() {
+        pulsa5kXL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pulsa5kActionPerformed(evt);
+                pulsa5kXLActionPerformed(evt);
             }
         });
 
@@ -1128,39 +1193,39 @@ public class Mainview extends javax.swing.JFrame {
         jLabel48.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel48.setText("100.000");
 
-        pulsa10k.setBackground(new java.awt.Color(211, 84, 0));
-        pulsa10k.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        pulsa10k.setText("Rp 11.000");
-        pulsa10k.addActionListener(new java.awt.event.ActionListener() {
+        pulsa10kXL.setBackground(new java.awt.Color(211, 84, 0));
+        pulsa10kXL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        pulsa10kXL.setText("Rp 11.000");
+        pulsa10kXL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pulsa10kActionPerformed(evt);
+                pulsa10kXLActionPerformed(evt);
             }
         });
 
-        pulsa20k.setBackground(new java.awt.Color(211, 84, 0));
-        pulsa20k.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        pulsa20k.setText("Rp 22.000");
-        pulsa20k.addActionListener(new java.awt.event.ActionListener() {
+        pulsa20kXL.setBackground(new java.awt.Color(211, 84, 0));
+        pulsa20kXL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        pulsa20kXL.setText("Rp 22.000");
+        pulsa20kXL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pulsa20kActionPerformed(evt);
+                pulsa20kXLActionPerformed(evt);
             }
         });
 
-        pulsa50k.setBackground(new java.awt.Color(211, 84, 0));
-        pulsa50k.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        pulsa50k.setText("Rp 52.000");
-        pulsa50k.addActionListener(new java.awt.event.ActionListener() {
+        pulsa50kXL.setBackground(new java.awt.Color(211, 84, 0));
+        pulsa50kXL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        pulsa50kXL.setText("Rp 52.000");
+        pulsa50kXL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pulsa50kActionPerformed(evt);
+                pulsa50kXLActionPerformed(evt);
             }
         });
 
-        pulsa100k.setBackground(new java.awt.Color(211, 84, 0));
-        pulsa100k.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        pulsa100k.setText("Rp 102.000");
-        pulsa100k.addActionListener(new java.awt.event.ActionListener() {
+        pulsa100kXL.setBackground(new java.awt.Color(211, 84, 0));
+        pulsa100kXL.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        pulsa100kXL.setText("Rp 102.000");
+        pulsa100kXL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                pulsa100kActionPerformed(evt);
+                pulsa100kXLActionPerformed(evt);
             }
         });
 
@@ -1188,15 +1253,15 @@ public class Mainview extends javax.swing.JFrame {
                             .addGroup(xlLayout.createSequentialGroup()
                                 .addComponent(jLabel48)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(pulsa100k))
+                                .addComponent(pulsa100kXL))
                             .addGroup(xlLayout.createSequentialGroup()
                                 .addComponent(jLabel46, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(pulsa20k, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(pulsa20kXL, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(xlLayout.createSequentialGroup()
                                 .addComponent(jLabel45, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(pulsa10k, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(pulsa10kXL, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(xlLayout.createSequentialGroup()
                                 .addComponent(jLabel44, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(xlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1205,11 +1270,11 @@ public class Mainview extends javax.swing.JFrame {
                                         .addComponent(jLabel50))
                                     .addGroup(xlLayout.createSequentialGroup()
                                         .addGap(43, 43, 43)
-                                        .addComponent(pulsa5k, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(pulsa5kXL, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, xlLayout.createSequentialGroup()
                                 .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(pulsa50k, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(pulsa50kXL, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, xlLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -1231,26 +1296,26 @@ public class Mainview extends javax.swing.JFrame {
                         .addGap(19, 19, 19)
                         .addGroup(xlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel44)
-                            .addComponent(pulsa5k))
+                            .addComponent(pulsa5kXL))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel50)
                         .addGap(18, 18, 18)
                         .addGroup(xlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(xlLayout.createSequentialGroup()
                                 .addGroup(xlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(pulsa10k)
+                                    .addComponent(pulsa10kXL)
                                     .addComponent(jLabel45))
                                 .addGap(18, 18, 18)
-                                .addComponent(pulsa20k))
+                                .addComponent(pulsa20kXL))
                             .addComponent(jLabel46))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                         .addGroup(xlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel47)
-                            .addComponent(pulsa50k))
+                            .addComponent(pulsa50kXL))
                         .addGap(24, 24, 24)
                         .addGroup(xlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel48)
-                            .addComponent(pulsa100k))
+                            .addComponent(pulsa100kXL))
                         .addGap(53, 53, 53)
                         .addComponent(jLabel55, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(xlLayout.createSequentialGroup()
@@ -1646,7 +1711,10 @@ public class Mainview extends javax.swing.JFrame {
         btnPulsa.setBackground(new Color(230, 126, 34));
         
     }//GEN-LAST:event_btnPulsaMouseEntered
-
+    public void getUlang() {
+        initComponents();
+        
+    }
     private void btnPulsaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnPulsaMouseExited
         // TODO add your handling code here:
          btnPulsa.setBackground(new Color(192, 57, 43));
@@ -1723,7 +1791,12 @@ public class Mainview extends javax.swing.JFrame {
         menuPanel.repaint();
         menuPanel.revalidate();
     }//GEN-LAST:event_btnPaketMouseClicked
-
+    private JLabel setSaldo(){
+        Random rand = new Random();
+        this.saldo = rand.nextInt(1000000) + 50000;
+        saldoAwal.setText("" + this.saldo);        return saldoAwal;
+        
+    }
     private void btnTokenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTokenMouseClicked
         // TODO add your handling code here:
         menuPanel.removeAll();
@@ -1771,84 +1844,155 @@ public class Mainview extends javax.swing.JFrame {
 
     private void tri10000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tri10000ActionPerformed
         // TODO add your handling code here:
-         int dialog = JOptionPane.YES_NO_OPTION;
+          int dialog = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
         
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
-            
-        }
+         saldo += 10500;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil > 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+                 Mainview b = new Mainview("" + parsingSaldo);
+                 b.setVisible(true);
+             
+         }
         
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+        
+        
+        
     }//GEN-LAST:event_tri10000ActionPerformed
 
     private void tri5000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tri5000ActionPerformed
         // TODO add your handling code here:
-        int dialog = JOptionPane.YES_NO_OPTION;
+         int dialog = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
         
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
-            
-        }
+         saldo += 5500;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil >= 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                 JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+                 Mainview b = new Mainview("" + parsingSaldo);
+                 b.setVisible(true);
+             
+         }
         
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
-       
+        
        
     }//GEN-LAST:event_tri5000ActionPerformed
 
     private void tri20000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tri20000ActionPerformed
         // TODO add your handling code here:
-         int dialog = JOptionPane.YES_NO_OPTION;
+          int dialog = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
         
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
-            
-        }
+         saldo += 20500;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil >= 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                 JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+            Mainview a = new Mainview("" + parsingSaldo);
+            a.setVisible(true); 
+             
+         }
         
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+        
     }//GEN-LAST:event_tri20000ActionPerformed
 
     private void tri50000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tri50000ActionPerformed
         // TODO add your handling code here:
-         int dialog = JOptionPane.YES_NO_OPTION;
+          int dialog = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
         
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
-            
-        }
+         saldo += 50500;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil >= 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                  JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+                 Mainview b = new Mainview("" + parsingSaldo);
+                 b.setVisible(true);
+             
+         }
         
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+        
     }//GEN-LAST:event_tri50000ActionPerformed
 
     private void tri100000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tri100000ActionPerformed
         // TODO add your handling code here:
-         int dialog = JOptionPane.YES_NO_OPTION;
+          int dialog = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
         
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
-            
-        }
+         saldo += 101000;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil >= 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                  
+                 JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+                 Mainview b = new Mainview("" + parsingSaldo);
+                 b.setVisible(true);
+         }
         
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+        
     }//GEN-LAST:event_tri100000ActionPerformed
 
     private void telkom5000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telkom5000ActionPerformed
@@ -1856,32 +2000,61 @@ public class Mainview extends javax.swing.JFrame {
          int dialog = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
         
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
-            
-        }
+         saldo += 5500;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil > 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                 JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+            Mainview a = new Mainview("" + parsingSaldo);
+            a.setVisible(true); 
+             
+         }
         
         JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+        
     }//GEN-LAST:event_telkom5000ActionPerformed
 
-    private void pulsa100kActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pulsa100kActionPerformed
+    private void pulsa100kXLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pulsa100kXLActionPerformed
         // TODO add your handling code here:
          int dialog = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
         
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
-            
-        }
+         saldo += 102000;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil > 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                 JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+            Mainview a = new Mainview("" + parsingSaldo);
+            a.setVisible(true); 
+             
+         }
         
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_pulsa100kActionPerformed
+        
+    }//GEN-LAST:event_pulsa100kXLActionPerformed
 
     private void inputNomorHpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputNomorHpActionPerformed
         
@@ -2023,18 +2196,32 @@ public class Mainview extends javax.swing.JFrame {
 
     private void indo50000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_indo50000ActionPerformed
         // TODO add your handling code here:
-         int dialog = JOptionPane.YES_NO_OPTION;
+          int dialog = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
         
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
-            
-        }
+         saldo += 51000;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil > 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                 JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+            Mainview a = new Mainview("" + parsingSaldo);
+            a.setVisible(true); 
+             
+         }
         
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+        
     }//GEN-LAST:event_indo50000ActionPerformed
 
     private void indo10000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_indo10000ActionPerformed
@@ -2042,15 +2229,29 @@ public class Mainview extends javax.swing.JFrame {
          int dialog = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
         
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
-            
-        }
+         saldo += 11000;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil > 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                 JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+            Mainview a = new Mainview("" + parsingSaldo);
+            a.setVisible(true); 
+             
+         }
         
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+        
     }//GEN-LAST:event_indo10000ActionPerformed
 
     private void indo5000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_indo5000ActionPerformed
@@ -2058,15 +2259,29 @@ public class Mainview extends javax.swing.JFrame {
          int dialog = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
         
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
-            
-        }
+         saldo += 5500;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil > 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                 JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+            Mainview a = new Mainview("" + parsingSaldo);
+            a.setVisible(true); 
+             
+         }
         
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+        
     }//GEN-LAST:event_indo5000ActionPerformed
 
     private void backIndosatMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backIndosatMouseClicked
@@ -2110,18 +2325,32 @@ public class Mainview extends javax.swing.JFrame {
 
     private void indo100000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_indo100000ActionPerformed
         // TODO add your handling code here:
-         int dialog = JOptionPane.YES_NO_OPTION;
+          int dialog = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
         
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
-            
-        }
+         saldo += 101000;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil > 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                 JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+            Mainview a = new Mainview("" + parsingSaldo);
+            a.setVisible(true); 
+             
+         }
         
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+        
     }//GEN-LAST:event_indo100000ActionPerformed
 
     private void telkom10000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telkom10000ActionPerformed
@@ -2129,15 +2358,29 @@ public class Mainview extends javax.swing.JFrame {
          int dialog = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
         
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
-            
-        }
+         saldo += 11000;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil > 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                 JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+            Mainview a = new Mainview("" + parsingSaldo);
+            a.setVisible(true); 
+             
+         }
         
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+        
     }//GEN-LAST:event_telkom10000ActionPerformed
 
     private void telkom20000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telkom20000ActionPerformed
@@ -2145,15 +2388,29 @@ public class Mainview extends javax.swing.JFrame {
          int dialog = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
         
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
-            
-        }
+        saldo += 21000;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil > 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                 JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+            Mainview a = new Mainview("" + parsingSaldo);
+            a.setVisible(true); 
+             
+         }
         
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+        
     }//GEN-LAST:event_telkom20000ActionPerformed
 
     private void telkom50000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telkom50000ActionPerformed
@@ -2161,15 +2418,29 @@ public class Mainview extends javax.swing.JFrame {
          int dialog = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
         
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
-            
-        }
+         saldo += 50000;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil > 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                 JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+            Mainview a = new Mainview("" + parsingSaldo);
+            a.setVisible(true); 
+             
+         }
         
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+        
     }//GEN-LAST:event_telkom50000ActionPerformed
 
     private void telkom100000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_telkom100000ActionPerformed
@@ -2177,15 +2448,29 @@ public class Mainview extends javax.swing.JFrame {
          int dialog = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
         
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
-            
-        }
+         saldo += 101000;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil > 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                 JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+            Mainview a = new Mainview("" + parsingSaldo);
+            a.setVisible(true); 
+             
+         }
         
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+        
     }//GEN-LAST:event_telkom100000ActionPerformed
 
     private void exis5000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exis5000ActionPerformed
@@ -2193,15 +2478,29 @@ public class Mainview extends javax.swing.JFrame {
          int dialog = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
         
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
-            
-        }
+         saldo += 6000;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil > 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                 JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+            Mainview a = new Mainview("" + parsingSaldo);
+            a.setVisible(true); 
+             
+         }
         
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+        
     }//GEN-LAST:event_exis5000ActionPerformed
 
     private void exis10000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exis10000ActionPerformed
@@ -2209,15 +2508,29 @@ public class Mainview extends javax.swing.JFrame {
          int dialog = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
         
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
-            
-        }
+         saldo += 12000;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil > 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                 JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+            Mainview a = new Mainview("" + parsingSaldo);
+            a.setVisible(true); 
+             
+         }
         
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+        
     }//GEN-LAST:event_exis10000ActionPerformed
 
     private void exis20000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exis20000ActionPerformed
@@ -2225,15 +2538,29 @@ public class Mainview extends javax.swing.JFrame {
          int dialog = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
         
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
-            
-        }
+         saldo += 21000;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil > 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                 JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+            Mainview a = new Mainview("" + parsingSaldo);
+            a.setVisible(true); 
+             
+         }
         
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+        
     }//GEN-LAST:event_exis20000ActionPerformed
 
     private void exis50000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exis50000ActionPerformed
@@ -2241,15 +2568,28 @@ public class Mainview extends javax.swing.JFrame {
          int dialog = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
         
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
-            
-        }
+         saldo += 51000;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil > 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                 JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+            Mainview a = new Mainview("" + parsingSaldo);
+            a.setVisible(true); 
+             
+         }        
         
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_exis50000ActionPerformed
 
     private void exis100000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exis100000ActionPerformed
@@ -2257,98 +2597,171 @@ public class Mainview extends javax.swing.JFrame {
          int dialog = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
         
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
-            
-        }
+         saldo += 102000;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil > 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                 JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+            Mainview a = new Mainview("" + parsingSaldo);
+            a.setVisible(true); 
+             
+         }        
         
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
         
-        int pulsaAwal = 5000;
-        String pulsaString = variablePulsa.getText();
-        int saldo = integer.parseInt(pulsaString);
         
-        int saldoAkhir = saldo - pulsaAwal;
     }//GEN-LAST:event_exis100000ActionPerformed
 
-    private void pulsa5kActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pulsa5kActionPerformed
+    private void pulsa5kXLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pulsa5kXLActionPerformed
         // TODO add your handling code here:
         
+         
+         
+        
+        
+            
         
         
          int dialog = JOptionPane.YES_NO_OPTION;
-        int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
-        
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
-            
-        }
-        
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
-        
-        
-        
-    }//GEN-LAST:event_pulsa5kActionPerformed
+        int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);  
+        saldo += 6000;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil > 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                 JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+            Mainview a = new Mainview("" + parsingSaldo);
+            a.setVisible(true); 
+             
+         }
+             
+                          
 
-    private void pulsa10kActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pulsa10kActionPerformed
-        // TODO add your handling code here:
-         int dialog = JOptionPane.YES_NO_OPTION;
-        int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
-        
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
             
-        }
+           
+           
         
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_pulsa10kActionPerformed
+        
+        
+    }//GEN-LAST:event_pulsa5kXLActionPerformed
 
-    private void pulsa20kActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pulsa20kActionPerformed
-        // TODO add your handling code here:
-         int dialog = JOptionPane.YES_NO_OPTION;
-        int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
-        
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
-            
-        }
-        
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_pulsa20kActionPerformed
-
-    private void pulsa50kActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pulsa50kActionPerformed
+    private void pulsa10kXLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pulsa10kXLActionPerformed
         // TODO add your handling code here:
          int dialog = JOptionPane.YES_NO_OPTION;
         int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
         
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
-            
-        }
+        saldo += 11000;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil > 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                 JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+            Mainview a = new Mainview("" + parsingSaldo);
+            a.setVisible(true); 
+             
+         }
         
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
-    }//GEN-LAST:event_pulsa50kActionPerformed
+        
+    }//GEN-LAST:event_pulsa10kXLActionPerformed
 
-    private void pulsa5kMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pulsa5kMouseClicked
+    private void pulsa20kXLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pulsa20kXLActionPerformed
+        // TODO add your handling code here:
+         int dialog = JOptionPane.YES_NO_OPTION;
+        int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
+        
+         saldo += 22000;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil > 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                 JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+            Mainview a = new Mainview("" + parsingSaldo);
+            a.setVisible(true); 
+             
+         }
+        
+        
+    }//GEN-LAST:event_pulsa20kXLActionPerformed
+
+    private void pulsa50kXLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pulsa50kXLActionPerformed
+        // TODO add your handling code here:
+         int dialog = JOptionPane.YES_NO_OPTION;
+        int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
+        
+         saldo += 52000;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil > 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                 JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+            Mainview a = new Mainview("" + parsingSaldo);
+            a.setVisible(true); 
+             
+         }
+        
+        
+    }//GEN-LAST:event_pulsa50kXLActionPerformed
+
+    private void pulsa5kXLMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pulsa5kXLMouseClicked
       
         
         
-    }//GEN-LAST:event_pulsa5kMouseClicked
+    }//GEN-LAST:event_pulsa5kXLMouseClicked
 
     private void variablePulsaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_variablePulsaMouseClicked
         // TODO add your handling code here:
@@ -2484,21 +2897,101 @@ public class Mainview extends javax.swing.JFrame {
 
     private void beliPaketActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_beliPaketActionPerformed
         // TODO add your handling code here:
-         int dialog = JOptionPane.YES_NO_OPTION;
-        int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
         
-        if(dialogResult == 0){
-            Mainview a = new Mainview();
-            a.setVisible(true);
-            this.setVisible(false);
-        }else{
+        String str = String.valueOf(saldoAwal.getText());
+        int parsingSaldo = Integer.parseInt(str);
+        int hasil = 0;
+        
+         
+        
+        
+        if(parsingSaldo > 0){
+            if(boxTipeKartu.getSelectedItem().equals("Pilihan")){
+            JOptionPane.showMessageDialog(this, "Harap mengisi pilihan kartu terlebih dahulu");
+             dispose();
+           Mainview a = new Mainview("" + parsingSaldo);
+           a.setVisible(true);
+        } else if(boxPilihanPaket.getSelectedItem().equals("pilihan")){
+             JOptionPane.showMessageDialog(this, "Harap mengisi pilihan paket terlebih dahulu");
+             dispose();
+           Mainview a = new Mainview("" + parsingSaldo);
+           a.setVisible(true);  
             
+        } else if(hargaPaket.equals("")){
+            
+            dispose();
+           Mainview a = new Mainview("" + parsingSaldo);
+           a.setVisible(true);
+            
+        } else if(noHp.getText().equals("")){
+            JOptionPane.showMessageDialog(this, "Harap mengisi nomor telepon terlebih dahulu");
+            dispose();
+           Mainview a = new Mainview("" + parsingSaldo);
+           a.setVisible(true);  
+        }
+            
+        else if(boxPilihanPaket.getSelectedItem().equals("1gb")){
+           hasil = parsingSaldo - 10000;
+          
+        //JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+           dispose();
+           Mainview a = new Mainview("" + hasil);
+           a.setVisible(true);
+           
+           
+        } else if(boxPilihanPaket.getSelectedItem().equals("2gb")){
+             hasil += parsingSaldo - 20000;
+              
+           JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+           dispose();
+           Mainview a = new Mainview("" + hasil);
+           a.setVisible(true);
+        } else if(boxPilihanPaket.getSelectedItem().equals("3gb")){
+             hasil += parsingSaldo - 30000;
+             
+           JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+           dispose();
+           Mainview a = new Mainview("" + hasil);
+           a.setVisible(true);
+        } else if(boxPilihanPaket.getSelectedItem().equals("5gb")){
+             hasil += parsingSaldo - 50000;
+              
+           JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+           dispose();
+           Mainview a = new Mainview("" + hasil);
+           a.setVisible(true);
+        } else if(boxPilihanPaket.getSelectedItem().equals("10gb")){
+             hasil += parsingSaldo - 100000;
+             
+           JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+           dispose();
+           Mainview a = new Mainview("" + hasil);
+           a.setVisible(true);
+        } else if(boxPilihanPaket.getSelectedItem().equals("50gb")){
+             hasil += parsingSaldo - 200000;
+             
+           JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+           dispose();
+           Mainview a = new Mainview("" + hasil);
+           a.setVisible(true);
+        } 
+        
+        
+        
+       
+        
+        
+       
+        } else{
+            JOptionPane.showMessageDialog(this, "Saldo Tidak Mencukupi", "Maaf Ya:)", JOptionPane.INFORMATION_MESSAGE);
+           dispose();
+           Mainview a = new Mainview("" + parsingSaldo);
+           a.setVisible(true);
         }
         
-        JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
-       
     }//GEN-LAST:event_beliPaketActionPerformed
-
+    
+    
     private void variableRandomMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_variableRandomMouseClicked
         
         dispose();
@@ -2542,32 +3035,43 @@ public class Mainview extends javax.swing.JFrame {
         variableRandom.setText(String.valueOf(variabelRandom));
     }//GEN-LAST:event_panelmenuMouseClicked
 
+    private void indo20000ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_indo20000ActionPerformed
+        // TODO add your handling code here:
+         int dialog = JOptionPane.YES_NO_OPTION;
+        int dialogResult = JOptionPane.showConfirmDialog(this, "Lanjut Pembayaran ?", "PEMBELIAN", dialog);
+        
+         saldo += 21000;
+            String str = String.valueOf(saldoAwal.getText());
+            int parsingSaldo = Integer.parseInt(str);
+            int hasil = parsingSaldo - saldo;
+           
+             if(hasil > 0){
+                
+              
+                 dispose();
+                 Mainview a = new Mainview("" + hasil);
+                 a.setVisible(true);
+   
+                             
+            JOptionPane.showMessageDialog(this, "PEMBAYARAN BERHASIL", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+         } else{
+                 JOptionPane.showMessageDialog(this, "Saldo tidak mencukupi", "MAKASIH YAH :)", JOptionPane.INFORMATION_MESSAGE);
+             dispose();
+            Mainview a = new Mainview("" + parsingSaldo);
+            a.setVisible(true); 
+             
+         }
+        
+        
+    }//GEN-LAST:event_indo20000ActionPerformed
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Mainview.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Mainview.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Mainview.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Mainview.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+        
+        
+        
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -2693,12 +3197,13 @@ public class Mainview extends javax.swing.JFrame {
     private javax.swing.JButton okeBeli;
     private javax.swing.JButton okeToken;
     private javax.swing.JPanel panelmenu;
-    private javax.swing.JButton pulsa100k;
-    private javax.swing.JButton pulsa10k;
-    private javax.swing.JButton pulsa20k;
-    private javax.swing.JButton pulsa50k;
-    private javax.swing.JButton pulsa5k;
+    private javax.swing.JButton pulsa100kXL;
+    private javax.swing.JButton pulsa10kXL;
+    private javax.swing.JButton pulsa20kXL;
+    private javax.swing.JButton pulsa50kXL;
+    private javax.swing.JButton pulsa5kXL;
     private javax.swing.JTextArea resultToken;
+    private javax.swing.JLabel saldoAwal;
     private javax.swing.JButton submitNomorHp;
     private javax.swing.JButton telkom10000;
     private javax.swing.JButton telkom100000;

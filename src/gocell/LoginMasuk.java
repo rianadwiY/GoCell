@@ -37,7 +37,7 @@ public class LoginMasuk extends javax.swing.JFrame {
                 String pass = ""; 
                 con = DriverManager.getConnection(DATABASE_URL, user, pass);
                 stm = con.createStatement();
-                JOptionPane.showMessageDialog(null, "Connection Berhasil");
+                
             }catch(SQLException e){
                 JOptionPane.showMessageDialog(null, "Connection Gagal");
             }
@@ -70,6 +70,8 @@ public class LoginMasuk extends javax.swing.JFrame {
         loginPassword = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("LoginMasuk");
@@ -107,6 +109,20 @@ public class LoginMasuk extends javax.swing.JFrame {
 
         jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\SUTARTO\\Downloads\\icons8-login-20.png")); // NOI18N
 
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel7.setText("Don't have an account ?");
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel8.setText("Register now!");
+        jLabel8.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel8MouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -137,7 +153,12 @@ public class LoginMasuk extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(loginUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE)
-                                    .addComponent(loginPassword))))))
+                                    .addComponent(loginPassword)))))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(41, 41, 41)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel8)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
@@ -160,7 +181,11 @@ public class LoginMasuk extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(jLabel6)
                     .addComponent(btnlogin))
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel8))
+                .addContainerGap(60, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -213,7 +238,7 @@ public class LoginMasuk extends javax.swing.JFrame {
                      JOptionPane.showMessageDialog(this, ex.getMessage());
                 } 
                 JOptionPane.showMessageDialog(null, "Berhasil Login");
-                JOptionPane.showMessageDialog(this, "Data Berhasil Disimpan!");
+                
                 dispose();
                 Mainview gotoP = new Mainview();
                 gotoP.setVisible(true);
@@ -235,6 +260,13 @@ public class LoginMasuk extends javax.swing.JFrame {
        
         
     }//GEN-LAST:event_btnloginActionPerformed
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+        // TODO add your handling code here:
+        dispose();
+                Register gotoP = new Register();
+                gotoP.setVisible(true);
+    }//GEN-LAST:event_jLabel8MouseClicked
 
     /**
      * @param args the command line arguments
@@ -279,6 +311,8 @@ public class LoginMasuk extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPasswordField loginPassword;

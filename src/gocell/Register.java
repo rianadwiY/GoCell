@@ -50,7 +50,7 @@ public class Register extends javax.swing.JFrame {
                 String pass = ""; 
                 con = DriverManager.getConnection(DATABASE_URL, user, pass);
                 stm = con.createStatement();
-                JOptionPane.showMessageDialog(null, "Connection Berhasil");
+                
             }catch(SQLException e){
                 JOptionPane.showMessageDialog(null, "Connection Gagal");
             }
@@ -125,6 +125,7 @@ public class Register extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         repassword = new javax.swing.JPasswordField();
         btnregister = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         jRadioButton1.setText("jRadioButton1");
 
@@ -261,32 +262,46 @@ public class Register extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(204, 204, 204));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButton1.setText("LOGIN");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout panelRegisLayout = new javax.swing.GroupLayout(panelRegis);
         panelRegis.setLayout(panelRegisLayout);
         panelRegisLayout.setHorizontalGroup(
             panelRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRegisLayout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(panelRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(panelRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(panelRegisLayout.createSequentialGroup()
+                        .addGap(41, 41, 41)
                         .addGroup(panelRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8)
-                            .addComponent(jLabel9))
-                        .addGap(25, 25, 25)
-                        .addGroup(panelRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel4)
-                            .addComponent(namaUser)
-                            .addComponent(username)
-                            .addComponent(email)
-                            .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)))
+                            .addGroup(panelRegisLayout.createSequentialGroup()
+                                .addGroup(panelRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7)
+                                    .addComponent(jLabel8)
+                                    .addComponent(jLabel9))
+                                .addGap(25, 25, 25)
+                                .addGroup(panelRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLabel4)
+                                    .addComponent(namaUser)
+                                    .addComponent(username)
+                                    .addComponent(email)
+                                    .addComponent(password, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)))
+                            .addGroup(panelRegisLayout.createSequentialGroup()
+                                .addComponent(jLabel10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(repassword, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(panelRegisLayout.createSequentialGroup()
-                        .addComponent(jLabel10)
+                        .addGap(95, 95, 95)
+                        .addComponent(btnregister)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(panelRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnregister)
-                            .addComponent(repassword))))
+                        .addComponent(jButton1)))
                 .addContainerGap(24, Short.MAX_VALUE))
         );
         panelRegisLayout.setVerticalGroup(
@@ -294,29 +309,31 @@ public class Register extends javax.swing.JFrame {
             .addGroup(panelRegisLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel4)
-                .addGap(74, 74, 74)
-                .addGroup(panelRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(31, 31, 31)
+                .addGroup(panelRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6)
                     .addComponent(namaUser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(21, 21, 21)
                 .addGroup(panelRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(username, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(panelRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(panelRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8)
                     .addComponent(email, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(panelRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGap(21, 21, 21)
+                .addGroup(panelRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
                     .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(22, 22, 22)
                 .addGroup(panelRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel10)
                     .addComponent(repassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(35, 35, 35)
-                .addComponent(btnregister)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGap(51, 51, 51)
+                .addGroup(panelRegisLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnregister)
+                    .addComponent(jButton1))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -414,6 +431,13 @@ public class Register extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_namaUserActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        LoginMasuk goToPage = new LoginMasuk();
+        goToPage.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -453,6 +477,7 @@ public class Register extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnregister;
     private javax.swing.JTextField email;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
